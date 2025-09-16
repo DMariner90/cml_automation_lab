@@ -73,3 +73,22 @@ Copy code
 - Always start with `ls -l`, `ps aux`, or `systemctl status` for context.  
 - Use `journalctl` to investigate service failures.  
 - Always verify after applying a fix. 
+
+---
+
+## 🔹 Session 6 – File Permissions  
+*(See: [Session 6 Notes](session_6.md))*  
+
+[Permission denied]
+↓
+ls -l <file>
+↓
+┌───────────────┐
+│ Owner correct?│──No──> sudo chown user file
+└───────┬───────┘
+↓ Yes
+┌─────────────────────┐
+│ Missing permissions?│──Yes──> chmod u+r file
+└─────────┬───────────┘
+↓ No
+Check special bits (sticky, setuid, setgid)
