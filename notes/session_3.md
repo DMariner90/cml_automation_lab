@@ -1,30 +1,115 @@
-# Session 3 – Sep 17, 2025
-**Topic:** Users, Groups & Sudo  
-**Milestone:** 1 – Linux & Server Fundamentals
+📘 Session 2 – File Viewing & Editing
 
-## What I Learned
-- Accounts live in `/etc/passwd`, groups in `/etc/group`; UIDs/GIDs identify them.
-- Members of the `sudo` group can run any command with sudo (Ubuntu default).
-- Use `visudo`/`/etc/sudoers.d/*` for safe, granular sudo rules.
-- Permissions can be scoped to *specific commands* (principle of least privilege).
+File: notes/session_2.md
 
-## Commands Practiced (commented)
-whoami                      # current user
-id                          # UID/GID and groups
-cat /etc/passwd             # list users
-cat /etc/group              # list groups
-sudo adduser lablimited     # create a test user
-sudo visudo -f /etc/sudoers.d/lablimited   # safe sudoers edit for one user
-sudo chmod 0440 /etc/sudoers.d/lablimited  # required sudoers file perms
-sudo -l                     # list allowed sudo commands
-sudo apt-get update         # allowed example
-sudo cat /etc/shadow        # blocked example
-sudo rm /etc/sudoers.d/lablimited          # remove rule (cleanup)
-sudo deluser --remove-home lablimited      # delete user (cleanup)
+---
+session: 2
+date: 2025-09-17
+milestone: 1 – Linux & Server Fundamentals
+topic: File Viewing & Editing
+duration: 2h
+tags: [linux, files, editing, exam]
+related: [Session 1 – Basic Commands]
+ENAUTO_obj: 1.1
+---
 
-## Issues / Fixes
-- N/A (note any prompts/errors you saw and how you resolved them)
+# 📘 Session 2 – File Viewing & Editing  
 
-## Next Steps
-- File ownership & group ownership (`chown`, `chgrp`), directory recursion, and verifying with `ls -l`.
+---
 
+## 📖 Introduction
+Being able to view and edit files is essential for working with Linux systems.  
+System configs, logs, and scripts all live in text files — if you can’t read and modify them confidently, automation and troubleshooting grind to a halt.  
+
+---
+
+## 🧪 Lesson Steps (Guided Labs)
+```bash
+cat /etc/os-release         # view OS release info
+less /etc/passwd            # scroll through system users
+nano test.txt               # edit or create a file in nano
+cp test.txt copy.txt        # copy a file
+mv copy.txt moved.txt       # rename or move a file
+rm moved.txt                # delete a file
+
+🔎 Review / Recap
+
+Learned to use cat and less to view files.
+
+Practiced editing with nano.
+
+Managed files using cp, mv, and rm.
+
+Automation tie-in: Python and Ansible configs are just text files. Knowing how to inspect/edit is critical.
+
+ENAUTO Objective: 1.1 – Linux Fundamentals.
+
+⚡ Troubleshooting
+[rm fails: No such file]
+        ↓
+Check filename with ls
+        ↓
+Typo? → correct and retry
+
+[Permission denied editing file]
+        ↓
+Is file owned by root?
+        ↓
+If yes → sudo nano <file>
+
+🧪 Challenge Lab
+Setup
+mkdir -p labs/session2_demo
+cd labs/session2_demo
+
+Scenario
+
+You’re asked to prepare a simple config file.
+
+Tasks
+
+Create a file config.txt with 3 lines of text.
+
+Copy it to backup_config.txt.
+
+Rename backup_config.txt to config.old.
+
+Delete config.old.
+
+📑 Cheat Sheet
+Command	Description
+cat	Print file contents
+less	Scroll view a file
+nano	Edit/create a file
+cp	Copy files
+mv	Move/rename files
+rm	Delete files
+🧠 Self-Check
+
+When to use cat vs less?
+
+How do you rename a file?
+
+How do you delete a file as root?
+
+✅ Answers
+
+Use cat for short files; less for longer, scrollable files.
+
+mv old new.
+
+sudo rm file.
+
+🔍 Command Lens: nano
+
+Purpose: Text editor.
+
+Keys: Ctrl+O save, Ctrl+X exit.
+
+Failures: “Permission denied” → need sudo.
+
+📚 Glossary
+
+stdout: Standard output, where cat prints.
+
+editor: Tool for modifying text files.

@@ -1,0 +1,60 @@
+# 📘 Master Cheat Sheet – Linux Fundamentals  
+
+---
+
+## 🔹 Session 1 – Basic Commands
+| Command | Description |
+|---------|-------------|
+| `ls -l` | List files in long format |
+| `pwd` | Show current directory |
+| `cd <dir>` | Change directory |
+| `mkdir <dir>` | Create directory |
+| `rm -r <dir>` | Remove directory recursively |
+
+---
+
+## 🔹 Session 2 – File Viewing & Editing
+| Command | Description |
+|---------|-------------|
+| `cat file` | Print file contents |
+| `less file` | View file with scrolling |
+| `nano file` | Edit file |
+| `cp file1 file2` | Copy file |
+| `mv file1 file2` | Move/rename file |
+
+---
+
+## 🔹 Session 3 – Users, Groups & Sudo
+| Command | Description |
+|---------|-------------|
+| `adduser <name>` | Create new user |
+| `passwd <name>` | Set/change password |
+| `usermod -aG <group> <user>` | Add user to group |
+| `deluser <name>` | Delete user |
+| `delgroup <name>` | Delete group |
+| `visudo` | Safely edit sudoers |
+| `sudo -l` | List allowed sudo commands |
+
+---
+
+## 🔹 Session 4 – File Ownership
+| Command | Description |
+|---------|-------------|
+| `chown user file` | Change owner |
+| `chown user:group file` | Change owner + group |
+| `chgrp group file` | Change group only |
+| `-R` | Recursive for dirs |
+
+---
+
+## 🔹 Session 5 – Processes & Services
+| Command | Description |
+|---------|-------------|
+| `ps aux` | Snapshot of all processes |
+| `top` | Interactive process monitor |
+| `htop` | Enhanced top |
+| `kill <PID>` | Terminate process |
+| `kill -9 <PID>` | Force terminate |
+| `systemctl start/stop/status/restart <service>` | Manage services |
+| `systemctl enable/disable <service>` | Boot-time control |
+| `journalctl -u <service>` | View service logs |
