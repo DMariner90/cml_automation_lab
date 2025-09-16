@@ -3,6 +3,7 @@
 ---
 
 ## 🔹 Session 1 – Basic Commands
+*(See: [Session 1 Notes](session_1.md))*
 | Command | Description |
 |---------|-------------|
 | `ls -l` | List files in long format |
@@ -14,6 +15,7 @@
 ---
 
 ## 🔹 Session 2 – File Viewing & Editing
+*(See: [Session 2 Notes](session_2.md))*
 | Command | Description |
 |---------|-------------|
 | `cat file` | Print file contents |
@@ -25,6 +27,7 @@
 ---
 
 ## 🔹 Session 3 – Users, Groups & Sudo
+*(See: [Session 3 Notes](session_3.md))*
 | Command | Description |
 |---------|-------------|
 | `adduser <name>` | Create new user |
@@ -38,6 +41,7 @@
 ---
 
 ## 🔹 Session 4 – File Ownership
+*(See: [Session 4 Notes](session_4.md))*
 | Command | Description |
 |---------|-------------|
 | `chown user file` | Change owner |
@@ -48,6 +52,7 @@
 ---
 
 ## 🔹 Session 5 – Processes & Services
+*(See: [Session 5 Notes](session_5.md))*
 | Command | Description |
 |---------|-------------|
 | `ps aux` | Snapshot of all processes |
@@ -58,3 +63,4 @@
 | `systemctl start/stop/status/restart <service>` | Manage services |
 | `systemctl enable/disable <service>` | Boot-time control |
 | `journalctl -u <service>` | View service logs |
+

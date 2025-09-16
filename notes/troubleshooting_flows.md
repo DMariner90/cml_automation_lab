@@ -2,22 +2,26 @@
 
 ---
 
-## 🔹 Session 3 – Users & Sudo
+## 🔹 Session 3 – Users & Sudo  
+*(See: [Session 3 Notes](session_3.md))*  
+
 [Cannot run sudo]
 ↓
 groups <user>
 ↓
 ┌───────────────┐
-│ In sudo group?│──No──> usermod -aG sudo <user>
+│ In sudo group?│──No──> sudo usermod -aG sudo <user>
 └───────┬───────┘
 ↓ Yes
 Check /etc/sudoers → visudo
 
+yaml
+Copy code
 
 ---
 
-## 🔹 Session 4 – File Ownership
-
+## 🔹 Session 4 – File Ownership  
+*(See: [Session 4 Notes](session_4.md))*  
 
 [Permission denied]
 ↓
@@ -31,11 +35,13 @@ ls -l <file>
 ↓
 Else: check SELinux/AppArmor
 
+yaml
+Copy code
 
 ---
 
-## 🔹 Session 5 – Processes & Services
-
+## 🔹 Session 5 – Processes & Services  
+*(See: [Session 5 Notes](session_5.md))*  
 
 [Process unresponsive]
 ↓
@@ -45,13 +51,25 @@ kill <PID>
 ↓
 If still running → kill -9 <PID>
 
+Copy code
 [Service won’t start]
 ↓
 systemctl status <service>
 ↓
-Active=failed?
+┌───────────────────┐
+│ Active=failed ? │
+└──────────┬────────┘
 ↓
 journalctl -u <service>
 ↓
 Config/dependency issue → fix & restart
 
+yaml
+Copy code
+
+---
+
+## 🔹 Notes
+- Always start with `ls -l`, `ps aux`, or `systemctl status` for context.  
+- Use `journalctl` to investigate service failures.  
+- Always verify after applying a fix. 
