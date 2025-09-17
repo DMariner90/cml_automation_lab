@@ -77,3 +77,14 @@
 | `chmod -R 755 dir` | recursive chmod |
 | `chmod 1777 dir` | sticky bit example |
 
+
+## 🔹 Session 7 – Linux Fundamentals Recap  
+*(See: [Session_7 Notes](session_7.md))*  
+
+| Command | Description | Expected Result |  
+|---------|-------------|-----------------|  
+| `systemctl enable --now ssh` | Start and enable SSH at boot | `active (running)` in `systemctl status ssh` |  
+| `chmod 1777 dir` | Set sticky bit on directory | `drwxrwxrwt` in `ls -ld` output |  
+| `echo -e '#!/bin/bash\necho "Automation Ready"' | sudo tee run.sh` | Quick script creation | Script prints `Automation Ready` |  
+
+

@@ -92,3 +92,47 @@ ls -l <file>
 └─────────┬───────────┘
 ↓ No
 Check special bits (sticky, setuid, setgid)
+
+
+[SSH fails]
+    ↓
+systemctl status ssh
+    ↓
+Enable: sudo systemctl enable --now ssh
+    ↓
+Check logs: journalctl -u ssh
+
+
+
+### Session 7 – Linux Fundamentals Recap  
+
+[Permission denied when accessing file]  
+    ↓  
+ls -l file  
+    ↓  
+Check owner/group → sudo chown user:group file  
+    ↓  
+Check permissions → sudo chmod 640 file  
+    ↓  
+✅ Expected Fix: User can now access/read file.  
+
+[user is not in sudoers file]  
+    ↓  
+groups user  
+    ↓  
+sudo usermod -aG sudo user  
+    ↓  
+sudo visudo → confirm %sudo group enabled  
+    ↓  
+✅ Expected Fix: User can run sudo commands.  
+
+[ssh: connect to host <IP> port 22: Connection refused]  
+    ↓  
+sudo systemctl status ssh  
+    ↓  
+sudo systemctl enable --now ssh  
+    ↓  
+journalctl -u ssh  
+    ↓  
+✅ Expected Fix: SSH is active and remote logins work.  
+
