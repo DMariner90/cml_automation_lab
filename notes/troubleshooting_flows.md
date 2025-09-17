@@ -136,3 +136,35 @@ journalctl -u ssh
     ↓  
 ✅ Expected Fix: SSH is active and remote logins work.  
 
+
+### Session 8 – Intel NUC Ubuntu Server Setup  
+
+[Static IP not applying]  
+    ↓  
+Check NIC name → ip link  
+    ↓  
+Validate YAML syntax → sudo netplan try  
+    ↓  
+Apply config → sudo netplan apply  
+    ↓  
+✅ Fix: IP visible via ip addr  
+
+[SSH still asking for password]  
+    ↓  
+Check authorized_keys exists → ls -la ~/.ssh  
+    ↓  
+Re-copy key → ssh-copy-id user@IP  
+    ↓  
+Verify sshd_config → PubkeyAuthentication yes, PasswordAuthentication no  
+    ↓  
+Restart SSH → sudo systemctl restart ssh  
+    ↓  
+✅ Fix: Key-only login works  
+
+[UFW blocking connection]  
+    ↓  
+Check rules → sudo ufw status  
+    ↓  
+Add SSH rule → sudo ufw allow OpenSSH  
+    ↓  
+✅ Fix: SSH access restored  
