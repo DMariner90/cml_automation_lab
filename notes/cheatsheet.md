@@ -88,3 +88,29 @@
 | `echo -e '#!/bin/bash\necho "Automation Ready"' | sudo tee run.sh` | Quick script creation | Script prints `Automation Ready` |  
 
 
+## 🔹 Session 9 – Python Virtual Environments & Package Management  
+*(See: [Session_9 Notes](session_9.md))*  
+
+| Command | Description | Expected Result |  
+|---------|-------------|-----------------|  
+| `python3 -m venv .venv` | Create venv | `.venv/` created |  
+| `source .venv/bin/activate` | Activate venv | `(.venv)` prompt |  
+| `pip install <pkg>` | Install library | Installed in venv |  
+| `pip list` | List libraries | Shows installed pkgs |  
+| `pip freeze > requirements.txt` | Save versions | File populated |  
+| `deactivate` | Exit venv | Prompt returns normal |  
+
+
+## 🔹 Session 10 – Python Basics: Variables, Data Types & Input/Output  
+*(See: [Session_10 Notes](session_10.md))*  
+
+| Command / Syntax | Description | Expected Result |  
+|------------------|-------------|-----------------|  
+| `device_name = "Router1"` | String variable | Stores text |  
+| `port = 22` | Integer variable | Stores number |  
+| `is_active = True` | Boolean variable | True/False value |  
+| `devices = ["R1","R2"]` | List | Ordered collection |  
+| `credentials = {"user":"admin"}` | Dictionary | Key/value pairs |  
+| `print(f"Device: {device_name}")` | f-string output | Prints variable inline |  
+| `input("Enter name: ")` | Get user input | Returns string from user |  
+| `int(input("Enter port: "))` | Input conversion | Returns integer |  

@@ -168,3 +168,59 @@ Check rules → sudo ufw status
 Add SSH rule → sudo ufw allow OpenSSH  
     ↓  
 ✅ Fix: SSH access restored  
+
+
+### Session 9 – Python Virtual Environments & Package Management  
+
+[pip not found]  
+    ↓  
+sudo apt install python3-pip -y  
+    ↓  
+✅ Fix: pip available  
+
+[.venv not activating]  
+    ↓  
+Check → source .venv/bin/activate  
+    ↓  
+✅ Fix: venv active  
+
+[ImportError running script]  
+    ↓  
+pip install <missing-package>  
+    ↓  
+✅ Fix: script runs successfully  
+
+### Session 10 – Python Basics: Variables, Data Types & Input/Output  
+
+[Script won’t run with `python`]  
+    ↓  
+Check if venv is active → `which python`  
+    ↓  
+If points to `/usr/bin/python3`, reactivate venv:  
+`source .venv/bin/activate`  
+    ↓  
+✅ Expected Fix: `python` now points to `.venv/bin/python`.  
+
+---
+
+[NameError: name 'variable' is not defined]  
+    ↓  
+Check for typos (Python is case-sensitive).  
+    ↓  
+✅ Expected Fix: Variable prints correctly after correction.  
+
+---
+
+[SyntaxError: invalid syntax]  
+    ↓  
+Check for missing `:` in dicts or mismatched quotes.  
+    ↓  
+✅ Expected Fix: Script runs without syntax errors.  
+
+---
+
+[`input()` always returns a string]  
+    ↓  
+Use `int(input(...))` for numeric input.  
+    ↓  
+✅ Expected Fix: Input stored as integer.  
