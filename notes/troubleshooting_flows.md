@@ -224,3 +224,47 @@ Check for missing `:` in dicts or mismatched quotes.
 Use `int(input(...))` for numeric input.  
     ↓  
 ✅ Expected Fix: Input stored as integer.  
+
+
+### Session 11 – Python Basics: Control Flow + Linting  
+
+[Black fails: "Cannot parse" error]  
+    ↓  
+Open file → check for invalid Python (e.g. pasted shell commands)  
+    ↓  
+Remove non-Python lines, save  
+    ↓  
+Re-run: black file.py  
+    ↓  
+✅ Expected Fix: Black reformats file successfully  
+
+---
+
+[Ruff error: "unrecognized subcommand"]  
+    ↓  
+Check command → must be `ruff check file.py` not just `ruff file.py`  
+    ↓  
+Re-run: ruff check file.py  
+    ↓  
+✅ Expected Fix: Ruff runs and reports issues  
+
+---
+
+[Script runs but gives wrong output]  
+    ↓  
+Check logic in `if/else` → conditions correct?  
+    ↓  
+Print debug values → `print(var)`  
+    ↓  
+✅ Expected Fix: Correct logic produces expected decision/output  
+
+---
+
+[While loop never ends]  
+    ↓  
+Check loop condition → does variable update each iteration?  
+    ↓  
+Add counter increment (`count += 1`)  
+    ↓  
+✅ Expected Fix: Loop ends when condition false  
+

@@ -114,3 +114,17 @@
 | `print(f"Device: {device_name}")` | f-string output | Prints variable inline |  
 | `input("Enter name: ")` | Get user input | Returns string from user |  
 | `int(input("Enter port: "))` | Input conversion | Returns integer |  
+
+
+## 🔹 Session 11 – Python Basics: Control Flow + Linting  
+*(See: [Session_11 Notes](session_11.md))*  
+
+| Command / Syntax | Description | Expected Result |  
+|------------------|-------------|-----------------|  
+| `if cond:` | Run block if condition true | Executes branch |  
+| `if/else` | Decision making | One of two paths runs |  
+| `for x in list:` | Loop through items | Iterates each element |  
+| `while cond:` | Loop until false | Repeats until stop condition |  
+| `break` | Exit loop early | Stops loop execution |  
+| `black file.py` | Auto-format Python | Reformats file consistently |  
+| `ruff check file.py` | Lint Python | Reports issues or passes |  
