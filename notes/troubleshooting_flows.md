@@ -268,3 +268,61 @@ Add counter increment (`count += 1`)
     ↓  
 ✅ Expected Fix: Loop ends when condition false  
 
+
+### Session 12 – While Loops & Counters  
+
+[Infinite loop in script]  
+    ↓  
+Check loop condition → `while attempt <= max_attempts`  
+    ↓  
+Confirm counter increment → `attempt += 1` inside loop  
+    ↓  
+If missing → add increment  
+    ↓  
+✅ Expected Fix: Loop ends correctly after max attempts.  
+
+[Loop ends too soon]  
+    ↓  
+Print condition values each iteration  
+    ↓  
+Check logic: `<=` vs `<` vs `==`  
+    ↓  
+Adjust condition to match intended loop count  
+    ↓  
+✅ Expected Fix: Loop runs expected number of times.  
+
+---
+
+### Session 12.5 – Python Fundamentals Sandbox  
+
+[IndentationError]  
+    ↓  
+Check alignment of loop/code blocks  
+    ↓  
+Correct indentation with 4 spaces per block  
+    ↓  
+✅ Expected Fix: Script runs without syntax errors.  
+
+[Unexpected infinite loop]  
+    ↓  
+Inspect while loop condition  
+    ↓  
+Verify counter increments with `+= 1`  
+    ↓  
+✅ Expected Fix: Loop exits correctly after retries.  
+
+[Logic error – break ends loop too soon]  
+    ↓  
+Review placement of `break` inside loop  
+    ↓  
+Move `break` only under correct success condition  
+    ↓  
+✅ Expected Fix: Loop retries until success or max attempts.  
+
+[Summary counters incorrect]  
+    ↓  
+Check increments → `successes += 1`, `failures += 1`  
+    ↓  
+Ensure they’re updated in correct branch of logic  
+    ↓  
+✅ Expected Fix: End-of-run summary matches reality.  

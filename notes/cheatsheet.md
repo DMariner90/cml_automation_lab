@@ -1,4 +1,4 @@
-# 📘 Master Cheat Sheet – Linux Fundamentals  
+# 📘 Master Cheat Sheet – Lab Fundamentals  
 
 ---
 
@@ -128,3 +128,25 @@
 | `break` | Exit loop early | Stops loop execution |  
 | `black file.py` | Auto-format Python | Reformats file consistently |  
 | `ruff check file.py` | Lint Python | Reports issues or passes |  
+
+## 🔹 Session 12 – While Loops & Counters  
+*(See: [Session 12 Notes](session_12.md))*  
+
+| Command / Concept | Description | Expected Result |  
+|-------------------|-------------|-----------------|  
+| `while condition:` | Repeat block while condition is True | Loop runs until condition False |  
+| `+=` inside loop | Increment counter each iteration | Prevents infinite loop |  
+| `break` | Exit loop early | Loop stops before condition False |  
+
+---
+
+## 🔹 Session 12.5 – Python Fundamentals Sandbox  
+*(See: [Session 12.5 Notes](session_12_5.md))*  
+
+| Command / Concept | Description | Expected Result |  
+|-------------------|-------------|-----------------|  
+| `+=` | Increment counter value | Counter increases as expected |  
+| `.startswith("R")` | Test if string begins with "R" | True for routers, False otherwise |  
+| `for i in range(x, y)` | Iterate numbers from x → y-1 | Prints sequence of values |  
+| `len(list)` | Count elements in a list | Returns integer length |  
+| `def function():` | Define reusable logic block | Function can be called repeatedly |  
