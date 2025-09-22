@@ -326,3 +326,30 @@ Check increments → `successes += 1`, `failures += 1`
 Ensure they’re updated in correct branch of logic  
     ↓  
 ✅ Expected Fix: End-of-run summary matches reality.  
+
+
+### Session 13 – Collections (Lists, Dicts, Sets)  
+
+[KeyError when accessing dict]  
+    ↓  
+Check if key exists → `if "R3" in device_ips:`  
+    ↓  
+Or use `.get("R3")` with default  
+    ↓  
+✅ Expected Fix: No crash when key missing.  
+
+[Unexpected missing VLANs]  
+    ↓  
+Confirm sets defined correctly → required vs configured  
+    ↓  
+Verify use of `.difference()` vs `.intersection()`  
+    ↓  
+✅ Expected Fix: VLAN compliance check correct.  
+
+[Unhashable type error in set]  
+    ↓  
+Check what’s inside set → only ints/strings allowed  
+    ↓  
+Avoid lists/dicts inside sets  
+    ↓  
+✅ Expected Fix: Set operations work as expected.  

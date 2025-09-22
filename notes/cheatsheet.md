@@ -150,3 +150,23 @@
 | `for i in range(x, y)` | Iterate numbers from x → y-1 | Prints sequence of values |  
 | `len(list)` | Count elements in a list | Returns integer length |  
 | `def function():` | Define reusable logic block | Function can be called repeatedly |  
+
+
+---
+
+## 2️⃣ `notes/cheatsheet.md` Update  
+
+```markdown
+## 🔹 Session 13 – Collections (Lists, Dicts, Sets)  
+*(See: [Session 13 Notes](session_13.md))*  
+
+| Command / Concept | Description | Expected Result |  
+|-------------------|-------------|-----------------|  
+| `devices = []` | Create a list | Ordered collection |  
+| `devices.append(x)` | Add to list | List grows dynamically |  
+| `devices[0:2]` | Slice list | Returns sub-list |  
+| `dict = {"key": "value"}` | Create dict | Key:value mapping |  
+| `dict["key"]` | Access by key | Value returned |  
+| `for k,v in dict.items()` | Loop dict | Iterates keys & values |  
+| `set1.difference(set2)` | Items in set1 not in set2 | Missing VLANs, etc. |  
+| `set1.intersection(set2)` | Items common to both sets | Shared VLANs, etc. |  
