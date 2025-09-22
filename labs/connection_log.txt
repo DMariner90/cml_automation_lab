@@ -1,0 +1,12 @@
+Connecting to R1... SUCCESS
+Connecting to R2... FAILED
+Connecting to Sw1... SUCCESS
+Connecting to SW2... FAILURE
+Device R1 processed.
+Device R2 processed.
+Device SW1 processed.
+Device FW1 processed.
+Connecting to R1... SUCCESS
+Connecting to R2... SUCCESS
+Connecting to SW1... SUCCESS
+Connecting to SW2... SUCCESS

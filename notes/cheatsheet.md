@@ -170,3 +170,16 @@
 | `for k,v in dict.items()` | Loop dict | Iterates keys & values |  
 | `set1.difference(set2)` | Items in set1 not in set2 | Missing VLANs, etc. |  
 | `set1.intersection(set2)` | Items common to both sets | Shared VLANs, etc. |  
+
+
+## 🔹 Session 14 – File I/O (Configs & Logs)  
+*(See: [Session 14 Notes](session_14.md))*  
+
+| Command / Concept | Description | Expected Result |  
+|-------------------|-------------|-----------------|  
+| `open("file","r")` | Open file for reading | Returns file handle |  
+| `f.read()` | Read entire file | String of contents |  
+| `f.readlines()` | Read all lines | List of strings |  
+| `open("file","w")` | Open for writing (overwrite) | File replaced |  
+| `open("file","a")` | Open for appending | Data added at end |  
+| `with open(...) as f:` | Context manager | File auto-closed | 

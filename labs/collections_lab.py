@@ -19,18 +19,18 @@ print("Updated devices: ", devices)
 # Iterate through the entire list
 for device in devices:
     print(f"Connecting to {device}...")
-    
-print ("---------- BREAK LINE LAB - END OF 1 ----------")
-    
-    
+
+print("---------- BREAK LINE LAB - END OF 1 ----------")
+
+
 # ------ Lab 2: Dictionaries for Device Attributes -----
 
 # Create a dictionary mapping device names to IPs
 device_ips = {
-    "R1" : "10.0.0.1",
-    "R2" : "10.0.0.2",
-    "SW1" : "10.0.0.10",
-    "FW1" : "10.0.0.254"
+    "R1": "10.0.0.1",
+    "R2": "10.0.0.2",
+    "SW1": "10.0.0.10",
+    "FW1": "10.0.0.254",
 }
 
 # print the whole dictionary
@@ -47,7 +47,7 @@ print("Updated mappings:", device_ips)
 for name, ip in device_ips.items():
     print(f"Device {name} has IP {ip}")
 
-print ("---------- BREAK LINE - END OF LAB 2 ----------")
+print("---------- BREAK LINE - END OF LAB 2 ----------")
 
 # ----- Lab 3: Sets for VLAN Comparison -----
 
@@ -62,7 +62,7 @@ print("Configured VLANs:", configured_vlans)
 missing_vlans = required_vlans.difference(configured_vlans)
 print("Missing VLANs:", missing_vlans)
 
-# Find common VLANs 
+# Find common VLANs
 common_vlans = required_vlans.intersection(configured_vlans)
 print("Common VLANs:", common_vlans)
 
@@ -70,4 +70,4 @@ print("Common VLANs:", common_vlans)
 configured_vlans.add(40)
 print("Updated Configured VLANs:", configured_vlans)
 
-print ("---------- BREAK LINE - END OF LAB 3 ----------")
+print("---------- BREAK LINE - END OF LAB 3 ----------")
