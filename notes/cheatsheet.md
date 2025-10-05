@@ -183,3 +183,14 @@
 | `open("file","w")` | Open for writing (overwrite) | File replaced |  
 | `open("file","a")` | Open for appending | Data added at end |  
 | `with open(...) as f:` | Context manager | File auto-closed | 
+
+
+## 🔹 Session 15 – YAML & JSON Conversion  
+*(See: [Session 15 Notes](session_15.md))*  
+
+| Command | Description | Expected Result |
+|----------|-------------|----------------|
+| `python3 yaml_basics.py` | Write/read YAML file | Prints “✅ Wrote topology.yaml” |
+| `python3 convert_json_yaml.py` | Convert JSON⇄YAML | Creates converted files |
+| `python3 challenge_yaml_to_json.py` | Filter IOS-XE routers | `labs/routers_iosxe.json` created |
+| `python3 stretch_site_summary.py` | Summarize devices per site | `labs/sites_summary.json` created |

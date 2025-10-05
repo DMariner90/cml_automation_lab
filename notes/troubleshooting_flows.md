@@ -369,3 +369,25 @@ Avoid lists/dicts inside sets
 | `open("file","w")` | Open for writing (overwrite) | File replaced |  
 | `open("file","a")` | Open for appending | Data added at end |  
 | `with open(...) as f:` | Context manager | File auto-closed | 
+
+### Session 15 – YAML & JSON Conversion  
+
+[Cannot import PyYAML]  
+    ↓  
+pip install pyyaml  
+    ↓  
+✅ Expected Fix: YAML scripts run successfully  
+
+[JSON Decode Error]  
+    ↓  
+Check file syntax or encoding  
+    ↓  
+Use `json.load()` inside try/except  
+    ↓  
+✅ Expected Fix: File loads without errors  
+
+[File not found on read]  
+    ↓  
+Confirm relative path (`labs/…` vs `scripts/…`)  
+    ↓  
+✅ Expected Fix: Script locates and reads file successfully  
