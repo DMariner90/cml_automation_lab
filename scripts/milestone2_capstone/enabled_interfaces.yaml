@@ -1,0 +1,8 @@
+count: 2
+interfaces:
+- name: GigabitEthernet1
+  type: iana-if-type:ethernetCsmacd
+  ip: 10.10.20.48
+- name: Loopback0
+  type: iana-if-type:softwareLoopback
+  ip: 172.16.1.1

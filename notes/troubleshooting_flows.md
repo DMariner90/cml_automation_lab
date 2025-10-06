@@ -416,3 +416,19 @@ Set verify=False for lab (only)
     ↓
 ✅ Expected Fix: HTTPS call succeeds
 
+### Session 17 – Milestone 2 capstone
+
+#[401 Unauthorized]
+↓
+Check username/password
+↓
+Verify sandbox URL and RESTCONF path
+↓
+✅ Expected Fix: API query successful
+
+[SSLError]
+↓
+Add verify=False to requests.get()
+↓
+✅ Expected Fix: SSL bypassed for self-signed cert
+

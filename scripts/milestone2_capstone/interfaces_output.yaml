@@ -1,0 +1,17 @@
+ietf-interfaces:interfaces:
+  interface:
+  - name: GigabitEthernet1
+    type: iana-if-type:ethernetCsmacd
+    enabled: true
+    ietf-ip:ipv4:
+      address:
+      - ip: 10.10.20.48
+  - name: Loopback0
+    type: iana-if-type:softwareLoopback
+    enabled: true
+    ietf-ip:ipv4:
+      address:
+      - ip: 172.16.1.1
+  - name: GigabitEthernet2
+    type: iana-if-type:ethernetCsmacd
+    enabled: false

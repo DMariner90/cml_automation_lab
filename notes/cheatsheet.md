@@ -209,3 +209,13 @@
 | `json.dump(obj,f,indent=2)` | Export JSON | Pretty file |
 | `csv.DictWriter(...).writerows(rows)` | Export CSV | Header + rows |
 
+
+## 🔹 Session 17 – Mini Network API Tool  
+*(See: [Session_17 Notes](session_17.md))*  
+
+| Command | Description | Expected Result |  
+|---------|-------------|-----------------|  
+| `requests.get()` | Send RESTCONF API request | Returns JSON response |  
+| `json.loads()` | Parse JSON string | Python dict |  
+| `yaml.dump()` | Save data as YAML | YAML file created |  
+| `verify=False` | Disable SSL verification | Bypass cert validation |  
