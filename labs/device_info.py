@@ -1,4 +1,3 @@
-
 device_name = "router1"
 device_ip = "10.10.10.10"
 port = 22
@@ -6,7 +5,7 @@ is_active = True
 
 supported_devices = ["router", "switch", "firewall"]
 
-credentials = {"username" : "david", "password" : "test"}
+credentials = {"username": "david", "password": "test"}
 
 print(f"Device Name: {device_name}")
 print(f"Device IP: {device_ip}")

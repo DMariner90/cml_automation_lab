@@ -15,3 +15,13 @@ routers:
     ip: 10.0.0.4
     os: NX-OS
     site: NYC
+
+switches:
+  - name: SW1
+    ip: 10.10.10.10
+    os: IOS-XE
+    site: LON
+  - name: SW2
+    ip: 10.10.10.20
+    os: IOS-XE
+    site: NYC

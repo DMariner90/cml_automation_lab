@@ -391,3 +391,28 @@ Use `json.load()` inside try/except
 Confirm relative path (`labs/…` vs `scripts/…`)  
     ↓  
 ✅ Expected Fix: Script locates and reads file successfully  
+
+### Session 16 – NX-API (NX-OS)
+
+[401 Unauthorized]
+    ↓
+Verify Quick Access creds → export NXOS_USER/NXOS_PASS
+    ↓
+Re-run request
+    ↓
+✅ Expected Fix: HTTP 200 with JSON body
+
+[KeyError parsing response]
+    ↓
+print(resp.text[:1000]) to inspect structure
+    ↓
+Adjust path: ins_api → outputs → output → body → TABLE_* → ROW_*
+    ↓
+✅ Expected Fix: Parser finds rows successfully
+
+[SSL certificate verify failed]
+    ↓
+Set verify=False for lab (only)
+    ↓
+✅ Expected Fix: HTTPS call succeeds
+

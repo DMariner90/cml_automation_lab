@@ -1,15 +1,17 @@
 # Lab 1: Reading from a file in read mode ("r") (router.cfg)
 
 # Open file in read mode
-with open("labs/router.cfg", "r") as f:   # , r = read mode and as f = assign the read in string as f
-    config = f.read()                   # Read entire file as a string
-    
+with open(
+    "labs/router.cfg", "r"
+) as f:  # , r = read mode and as f = assign the read in string as f
+    config = f.read()  # Read entire file as a string
+
 print("Full Config:\n", config)
 
 # Read line by line in the chosen file
 with open("labs/router.cfg", "r") as file:
     config = file.readlines()
-print("Config Lines:" , config)
+print("Config Lines:", config)
 
 print("----------- BREAK LINE --------------")
 

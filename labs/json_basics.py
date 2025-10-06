@@ -5,7 +5,7 @@ device_info = {
     "hostname": "core-router",
     "ip": "10.229.1.1",
     "os": "IOS-XE",
-    "version": "17.9.3"
+    "version": "17.9.3",
 }
 
 # --- Write JSON file ---

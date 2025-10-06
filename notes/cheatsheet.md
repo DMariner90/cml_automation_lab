@@ -194,3 +194,18 @@
 | `python3 convert_json_yaml.py` | Convert JSON⇄YAML | Creates converted files |
 | `python3 challenge_yaml_to_json.py` | Filter IOS-XE routers | `labs/routers_iosxe.json` created |
 | `python3 stretch_site_summary.py` | Summarize devices per site | `labs/sites_summary.json` created |
+
+
+## 🔹 Session 16 – NX-API (NX-OS Always-On)
+*(See: [Session 16 Notes](session_16.md))*
+
+| Command/Pattern | Description | Expected Result |
+|---|---|---|
+| `POST https://<host>/ins` | NX-API endpoint | 200 OK + JSON body |
+| Header: `Content-Type: application/json` | Tell NX-API we’re sending JSON | Valid request |
+| Payload: `{"ins_api":{"type":"cli_show","input":"show hostname","output_format":"json"}}` | Run CLI as JSON | Hostname JSON returned |
+| JSON path: `ins_api → outputs → output → body` | Where data lives | Dict of fields/tables |
+| Table path: `TABLE_* → ROW_*` | Interface/list outputs | List of row dicts |
+| `json.dump(obj,f,indent=2)` | Export JSON | Pretty file |
+| `csv.DictWriter(...).writerows(rows)` | Export CSV | Header + rows |
+

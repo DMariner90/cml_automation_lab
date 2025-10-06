@@ -13,7 +13,7 @@ Appends results if run multiple times.
 
 # Read in devices from devices.txt
 with open("labs/devices.txt", "r") as read_file:
-    devices = read_file.read().splitlines()               # Splitlines() removes new lines
+    devices = read_file.read().splitlines()  # Splitlines() removes new lines
 
 print(f"Devices loaded from file... {devices}")
 
