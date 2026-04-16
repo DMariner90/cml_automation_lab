@@ -6,4 +6,4 @@ __pycache__/
 *.pyc
 
 # Ignore credential files
-./scripts/creds.md
+/home/david/cml_automation_lab/scripts/creds.md
