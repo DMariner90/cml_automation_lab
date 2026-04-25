@@ -1,9 +1,7 @@
 import requests
 from getpass import getpass
 import urllib3
-import json
 import yaml
-import pprint
 
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 

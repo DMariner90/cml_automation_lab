@@ -1,0 +1,38 @@
+---
+- name: "Get list of users from SD-WAN manager"
+  hosts: local
+  gather_facts: False
+
+
+  tasks:
+    - name: "Task 1: Post authentication request to SD-WAN Manager"
+      ansible.builtin.uri:
+        url: "{{ vmanage_base_url }}/j_security_check"
+        method: POST
+        body_format: form-urlencoded
+        body:
+          j_username: "{{ vmanage_username }}"
+          j_password: "{{ vmanage_password }}"
+        validate_certs: False
+      register: returned_token
+
+    - name: "Task 2: Store token cookie"
+      set_fact: 
+        session_cookie: "{{ returned_token.set_cookie }}"
+    
+    - name: "Task 3: Get list of SD-WAN manager users"
+      ansible.builtin.uri:
+        url: "{{ vmanage_base_url }}/dataservice/admin/user"
+        method: GET
+        validate_certs: False
+        headers:
+          Accept: "application/json"
+          Cookie: "{{ session_cookie}}"
+        return_content: True
+      register: list_of_users
+    
+    - name: "Task 4: Print the list of users"
+      debug:
+        msg: "{{ list_of_users.json.data }}"
+
+

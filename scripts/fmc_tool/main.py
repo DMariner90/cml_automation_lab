@@ -116,7 +116,7 @@ def main():
 
     # 5) Create shared run context
     ctx = RunContext(
-        output_format="yaml",   # default; may be changed by user
+        output_format="yaml",  # default; may be changed by user
         run_dir=run_dir,
         domain_name=domain_name,
         domain_uuid=domain_uuid,

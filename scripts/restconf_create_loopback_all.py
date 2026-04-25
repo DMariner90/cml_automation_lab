@@ -18,6 +18,7 @@ HEADERS = {
     "Content-Type": "application/yang-data+json",
 }
 
+
 def build_loopback_payload(ip_address: str) -> dict:
     """
     Build the JSON payload for Loopback100 using ietf-interfaces + ietf-ip.
@@ -29,15 +30,11 @@ def build_loopback_payload(ip_address: str) -> dict:
             "type": "iana-if-type:softwareLoopback",
             "enabled": True,
             "ietf-ip:ipv4": {
-                "address": [
-                    {
-                        "ip": ip_address,
-                        "netmask": "255.255.255.255"
-                    }
-                ]
-            }
+                "address": [{"ip": ip_address, "netmask": "255.255.255.255"}]
+            },
         }
     }
+
 
 def main():
     print("=== RESTCONF: Create/Update Loopback100 on all routers ===")
@@ -60,10 +57,6 @@ def main():
 
         print(f"\n--- {name} ({ip}) ---")
         print(f"Configuring Loopback100 with IP {lo_ip}")
-
-
-
-
 
         try:
             resp = requests.put(

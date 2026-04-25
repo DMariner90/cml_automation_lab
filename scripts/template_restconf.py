@@ -113,29 +113,52 @@ def main():
         try:
             # Map Python string "GET" → actual requests.get, etc.
             if HTTP_METHOD == "GET":
-                resp = requests.get(url, headers=HEADERS,
-                                    auth=(username, password),
-                                    verify=False, timeout=10)
+                resp = requests.get(
+                    url,
+                    headers=HEADERS,
+                    auth=(username, password),
+                    verify=False,
+                    timeout=10,
+                )
 
             elif HTTP_METHOD == "POST":
-                resp = requests.post(url, headers=HEADERS, json=DATA,
-                                     auth=(username, password),
-                                     verify=False, timeout=10)
+                resp = requests.post(
+                    url,
+                    headers=HEADERS,
+                    json=DATA,
+                    auth=(username, password),
+                    verify=False,
+                    timeout=10,
+                )
 
             elif HTTP_METHOD == "PUT":
-                resp = requests.put(url, headers=HEADERS, json=DATA,
-                                    auth=(username, password),
-                                    verify=False, timeout=10)
+                resp = requests.put(
+                    url,
+                    headers=HEADERS,
+                    json=DATA,
+                    auth=(username, password),
+                    verify=False,
+                    timeout=10,
+                )
 
             elif HTTP_METHOD == "PATCH":
-                resp = requests.patch(url, headers=HEADERS, json=DATA,
-                                      auth=(username, password),
-                                      verify=False, timeout=10)
+                resp = requests.patch(
+                    url,
+                    headers=HEADERS,
+                    json=DATA,
+                    auth=(username, password),
+                    verify=False,
+                    timeout=10,
+                )
 
             elif HTTP_METHOD == "DELETE":
-                resp = requests.delete(url, headers=HEADERS,
-                                       auth=(username, password),
-                                       verify=False, timeout=10)
+                resp = requests.delete(
+                    url,
+                    headers=HEADERS,
+                    auth=(username, password),
+                    verify=False,
+                    timeout=10,
+                )
 
             else:
                 print(f"Unsupported method: {HTTP_METHOD}")
@@ -180,4 +203,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-

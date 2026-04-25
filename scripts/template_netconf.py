@@ -101,10 +101,10 @@ def netconf_connect(host, port, username, password):
         port=port,
         username=username,
         password=password,
-        hostkey_verify=False,      # Do not verify host key (lab-friendly)
-        allow_agent=False,         # Don't use SSH agent
-        look_for_keys=False,       # Don't use local SSH keys
-        timeout=30,                # Session timeout in seconds
+        hostkey_verify=False,  # Do not verify host key (lab-friendly)
+        allow_agent=False,  # Don't use SSH agent
+        look_for_keys=False,  # Don't use local SSH keys
+        timeout=30,  # Session timeout in seconds
     )
 
 

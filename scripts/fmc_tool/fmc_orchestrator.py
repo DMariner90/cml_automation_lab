@@ -36,7 +36,7 @@ urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 # ---------------------------------------------------------------------------
 # FMC SETTINGS
 # ---------------------------------------------------------------------------
-FMC_HOST = "10.10.20.62"   # <-- change if needed
+FMC_HOST = "10.10.20.62"  # <-- change if needed
 BASE_URL = f"https://{FMC_HOST}"
 
 DEFAULT_LIMIT = 100
@@ -51,8 +51,9 @@ class RunContext:
     """
     Holds run-specific state shared across tasks.
     """
-    output_format: str        # "yaml" or "json"
-    run_dir: Path             # outputs/<timestamp__domain...>/
+
+    output_format: str  # "yaml" or "json"
+    run_dir: Path  # outputs/<timestamp__domain...>/
     domain_name: str
     domain_uuid: str
     fmc_host: str
@@ -306,16 +307,12 @@ def fmc_list_policies(access_token: str, domain_uuid: str) -> List[Dict[str, Any
     return [{"name": p["name"], "id": p["id"], "type": p["type"]} for p in data]
 
 
-def select_policies(
-    policies: List[Dict[str, Any]]
-) -> Tuple[List[Dict[str, Any]], str]:
+def select_policies(policies: List[Dict[str, Any]]) -> Tuple[List[Dict[str, Any]], str]:
     print("\n=== Access Policies ===")
     for i, p in enumerate(policies, start=1):
         print(f"{i}. {p['name']}")
 
-    choice = input(
-        "\nSelect policies (Enter/all or 1,3,5): "
-    ).strip()
+    choice = input("\nSelect policies (Enter/all or 1,3,5): ").strip()
 
     if choice == "" or choice.lower() == "all":
         return policies, "all"
@@ -343,16 +340,12 @@ def fmc_list_devices(access_token: str, domain_uuid: str) -> List[Dict[str, Any]
     ]
 
 
-def select_devices(
-    devices: List[Dict[str, Any]]
-) -> Tuple[List[Dict[str, Any]], str]:
+def select_devices(devices: List[Dict[str, Any]]) -> Tuple[List[Dict[str, Any]], str]:
     print("\n=== Devices ===")
     for i, d in enumerate(devices, start=1):
         print(f"{i}. {d['name']} ({d.get('model')})")
 
-    choice = input(
-        "\nSelect devices (Enter/all or 1,3,5): "
-    ).strip()
+    choice = input("\nSelect devices (Enter/all or 1,3,5): ").strip()
 
     if choice == "" or choice.lower() == "all":
         return devices, "all"

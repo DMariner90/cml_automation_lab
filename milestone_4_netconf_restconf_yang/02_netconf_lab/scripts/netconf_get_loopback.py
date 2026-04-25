@@ -5,7 +5,7 @@ ROUTER = {
     "port": 830,
     "username": "david",
     "password": "cisco123",
-    "hostkey_verify": False
+    "hostkey_verify": False,
 }
 
 filter_xml = """

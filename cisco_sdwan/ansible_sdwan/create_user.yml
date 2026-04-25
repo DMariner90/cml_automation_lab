@@ -1,0 +1,72 @@
+---
+- name: "Get authenticated with j_security_check & XSRF token"
+  hosts: local
+  gather_facts: False
+
+  vars:
+    user_payload:
+      group:
+        - "netadmin"
+      description: "User created with Ansible"
+      userName: "ansible-user2"
+      password: "C1sco12345"
+
+
+
+
+  tasks:
+    - name: "Task 1: Post authentication request to SD-WAN Manager"
+      ansible.builtin.uri:
+        url: "{{ vmanage_base_url }}/j_security_check"
+        method: POST
+        body_format: form-urlencoded
+        body:
+          j_username: "{{ vmanage_username }}"
+          j_password: "{{ vmanage_password }}"
+        validate_certs: False
+      register: returned_token
+
+    - name: "Task 2: Store j_security_check token cookie"
+      set_fact: 
+        session_cookie: "{{ returned_token.set_cookie }}"
+    
+    - name: "Task 3: Retrieve XSRF token"
+      ansible.builtin.uri:
+        url: "{{ vmanage_base_url }}/dataservice/client/token"
+        method: GET
+        validate_certs: False
+        headers:
+          Cookie: "{{ session_cookie}}"
+        return_content: True
+      register: xsrf_token_result
+    
+    - name: "Task 4: Print XSRF token cookie"
+      debug:
+        msg: "{{ xsrf_token_result.content }}"
+
+    - name: "Task 5: Store XSRF token cookie"
+      set_fact:
+        xsrf_token: "{{ xsrf_token_result.content }}"
+    
+    - name: "Task 6: Create a new user"
+      ansible.builtin.uri:
+        url: "{{ vmanage_base_url }}/dataservice/admin/user"
+        method: POST
+        validate_certs: False
+        headers:
+          Content-Type: "application/json"
+          X-XSRF-TOKEN: "{{ xsrf_token }}"
+          Cookie: "{{ session_cookie }}"
+        body_format: json
+        body: "{{ user_payload }}"
+        status_code:
+          - 200
+          - 201
+          - 202
+        return_content: True
+      register: create_user_result
+
+    - name: "Task 7: Print the status result "
+      debug:
+        msg: "{{ create_user_result.status }}"
+

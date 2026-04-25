@@ -1,4 +1,3 @@
-import netmiko
 from netmiko import ConnectHandler
 
 # Device connection details
@@ -6,7 +5,7 @@ device = {
     "device_type": "cisco_ios",
     "ip": "192.168.1.10",
     "username": "admin",
-    "password": "cisco"
+    "password": "cisco",
 }
 
 # Open the SSH connection

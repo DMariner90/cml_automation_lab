@@ -1,5 +1,4 @@
 import os
-import json
 import yaml
 import requests
 from requests.exceptions import RequestException
@@ -25,8 +24,8 @@ try:
         url,
         headers=headers,
         auth=(device["username"], device["password"]),
-        verify=False,        # lab only; verify certs in prod
-        timeout=15
+        verify=False,  # lab only; verify certs in prod
+        timeout=15,
     )
     print(f"HTTP {resp.status_code} {resp.reason}")
     resp.raise_for_status()
@@ -89,7 +88,9 @@ with open("scripts/milestone2_capstone/interfaces_output.yaml", "w") as f:
 
 # Filtered summary to YAML
 with open("scripts/milestone2_capstone/enabled_interfaces.yaml", "w") as f:
-    yaml.dump({"count": len(enabled_ipv4), "interfaces": enabled_ipv4}, f, sort_keys=False)
+    yaml.dump(
+        {"count": len(enabled_ipv4), "interfaces": enabled_ipv4}, f, sort_keys=False
+    )
 
 print("📝 Saved: labs/interfaces_output.yaml")
 print("📝 Saved: labs/enabled_interfaces.yaml")

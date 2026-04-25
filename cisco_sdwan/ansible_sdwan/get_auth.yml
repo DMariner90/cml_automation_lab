@@ -1,0 +1,22 @@
+---
+- name: "Get authenticated with j_security_check"
+  hosts: local
+  gather_facts: False
+
+
+  tasks:
+    - name: "Post authentication request to SD-WAN Manager"
+      ansible.builtin.uri:
+        url: "{{ vmanage_base_url }}/j_security_check"
+        method: POST
+        body_format: form-urlencoded
+        body:
+          j_username: "{{ vmanage_username }}"
+          j_password: "{{ vmanage_password }}"
+        validate_certs: False
+      register: login_request
+
+    - name: "Print the auth token"
+      debug:
+        msg: "{{ login_request.set_cookie }}"
+

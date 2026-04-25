@@ -1,18 +1,17 @@
 # This is a simple script that creates a loopback interface on the listed router using NETCONF and XML
 
 from ncclient import manager
-from lxml import etree
 
 ROUTER = {
-    "host" : "10.229.1.91",
-    "port" : 830,
-    "username" : "david",
-    "password" : "cisco123",
-    "hostkey_verify" : False
+    "host": "10.229.1.91",
+    "port": 830,
+    "username": "david",
+    "password": "cisco123",
+    "hostkey_verify": False,
 }
 
 
-# Create a loopback interface with XML/NETCONF as per details below: 
+# Create a loopback interface with XML/NETCONF as per details below:
 loopback_cfg = """
 <config xmlns="urn:ietf:params:xml:ns:netconf:base:1.0">
   <interfaces xmlns="urn:ietf:params:xml:ns:yang:ietf-interfaces">
@@ -41,6 +40,3 @@ with manager.connect(**ROUTER) as router:
     # Push the configuration XML
     reply = router.edit_config(target="running", config=loopback_cfg)
     print(reply.xml)
-
-    
-    

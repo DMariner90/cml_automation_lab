@@ -15,9 +15,8 @@ DEVICES = [
 ]
 
 RESTCONF_RESOURCE = "/restconf/data/ietf-interfaces:interfaces"
-HEADERS = {
-    "Accept": "application/yang-data+json"
-}
+HEADERS = {"Accept": "application/yang-data+json"}
+
 
 def main():
     print("=== RESTCONF: Get interfaces from all routers ===")
@@ -71,6 +70,7 @@ def main():
             f.write(yaml_output)
 
         print(f"Saved YAML to {filename}")
+
 
 if __name__ == "__main__":
     main()

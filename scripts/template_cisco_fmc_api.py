@@ -37,7 +37,7 @@ urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 # ---------------------------------------------------------------------------
 # FMC SETTINGS — CHANGE THESE
 # ---------------------------------------------------------------------------
-FMC_HOST = "10.10.20.62"          # <-- your FMC IP / hostname
+FMC_HOST = "10.10.20.62"  # <-- your FMC IP / hostname
 BASE_URL = f"https://{FMC_HOST}"
 
 # Endpoint template: {domain_uuid} will be replaced after selection
@@ -78,7 +78,7 @@ def fmc_authenticate(username: str, password: str):
 
     resp = requests.post(
         auth_url,
-        auth=(username, password),   # HTTP Basic auth
+        auth=(username, password),  # HTTP Basic auth
         verify=False,
     )
 
