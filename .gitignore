@@ -1,10 +1,95 @@
-# Ignore Python virtual environments
+# ----------------------------
+# Python
+# ----------------------------
 .venv/
-
-# Ignore Python cache files
+venv/
 __pycache__/
 *.pyc
+*.pyo
+*.pyd
+*.swp
+.python-version
 
-# Ignore credential files
+# ----------------------------
+# Secrets / credentials
+# ----------------------------
+.env
+.env.*
+*.env
+
+secrets.yml
+secrets.yaml
+vault.yml
+vault.yaml
+
+credentials.yml
+credentials.yaml
+credentials.json
+
+*.pem
+*.key
+*.crt
+*.csr
+id_rsa*
+id_ed25519*
+
+*.p12
+*.pfx
+
+# Cisco / lab auth files
+hosts.ini
+inventory.ini
+group_vars/
+host_vars/
+
+# Requests tokens/cookies dumps
+token.json
+tokens.json
+session.json
+
+# Your credential notes
 scripts/creds.md
 *.creds.md
+
+# local auth files
+auth.py
+local_secrets.py
+
+# ----------------------------
+# Ansible sensitive
+# ----------------------------
+*.retry
+.ansible/
+
+# If using ansible vault files
+*.vault
+
+# ----------------------------
+# Lab generated artifacts
+# ----------------------------
+*.log
+logs/
+output/
+outputs/
+artifacts/
+
+# CML generated snapshots if sensitive
+*.qcow2
+*.iso
+
+# device backups/config dumps
+running-config*
+startup-config*
+device_backups/
+
+# ----------------------------
+# IDE
+# ----------------------------
+.vscode/settings.json
+.idea/
+
+# ----------------------------
+# OS junk
+# ----------------------------
+.DS_Store
+Thumbs.db
